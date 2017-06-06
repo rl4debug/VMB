@@ -11,6 +11,7 @@ namespace CMS.Controllers
         public ActionResult Index()
         {
             var a = 1;
+            var b = a + 1;
             return View ();
         }
     }
