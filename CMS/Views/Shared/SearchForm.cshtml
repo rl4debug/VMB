@@ -1,0 +1,211 @@
+﻿<form>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group form-group-lg form-group-icon-left">
+                <i class="fa fa-map-marker input-icon"></i>
+                <label>Sân bay đi</label>
+                <input id="flight-from" class="form-control medium-down--three-twelfths" placeholder="Thành phố, sân bay đi" type="text" onClick="this.setSelectionRange(0, this.value.length); return false;" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-group-lg form-group-icon-left">
+                <i class="fa fa-map-marker input-icon"></i>
+                <label>Sân bay đến</label>
+                <input id="flight-to" class="form-control" placeholder="Thành phố, sân bay dến" type="text" onClick="this.setSelectionRange(0, this.value.length); return false;"/>
+            </div>
+        </div>
+    </div>
+    <div class="input-daterange">
+        <div class="row"> 
+            <div class="col-md-6">
+                <div class="form-group form-group-lg form-group-icon-left">
+                    <i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                    <label>Ngày đi</label>
+                    <input id="depart-time" class="form-control" name="start" type="text" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group form-group-lg form-group-icon-left">
+                    <i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                    <label>Ngày về</label>
+                    <input id="return-time" class="form-control" name="end" type="text" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group form-group-lg form-group-select-plus">
+                    <label>Người lớn</label>
+                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input value="1" type="radio" name="options" />1
+                        </label>
+                        <label class="btn btn-primary">
+                            <input value="2" type="radio" name="options" />2
+                        </label>
+                        <label class="btn btn-primary">
+                            <input value="2" class="num-more" type="radio" name="options" />2+
+                        </label>
+                    </div>
+                    <select id="adults" class="form-control hidden">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected="selected">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-lg form-group-select-plus">
+                    <label>Trẻ em (2-12 tuổi)</label>
+                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input value="0" type="radio" name="options" />0
+                        </label>
+                        <label class="btn btn-primary">
+                            <input value="1" type="radio" name="options" />1
+                        </label>
+                        <label class="btn btn-primary">
+                            <input value="2" type="radio" name="options" />2
+                        </label>
+                        <label class="btn btn-primary">
+                            <input value="2" class="num-more" type="radio" name="options" />2+
+                        </label>
+                    </div>
+                    <select id="children" class="form-control hidden">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected="selected">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-group-lg form-group-select-plus">
+                    <label>Trẻ sơ sinh (< 2 tuổi)</label>
+                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input value="0" type="radio" name="options" />0
+                        </label>
+                        <label class="btn btn-primary">
+                            <input value="1" type="radio" name="options" />1
+                        </label>
+                        <label class="btn btn-primary">
+                            <input value="2" type="radio" name="options" />2
+                        </label>
+                        <label class="btn btn-primary">
+                            <input value="2" class="num-more" type="radio" name="options" />2+
+                        </label>
+                    </div>
+                    <select id="infants" class="form-control hidden">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected="selected">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="submit-flight-search-form" class="btn btn-primary btn-lg" type="submit">Tìm chuyến bay</button>
+</form>
+    <div id="depart-ap-wrapper" style="position: relative"></div>
+    <div id="return-ap-wrapper" style="position: relative"></div>
+    <script id="list-airport-template" type="text/html">
+        <div id="stations-static" class="row">
+            <div class="col-md-4">
+                <ul>
+                    <li>Miền Bắc </li>
+                    <li><a data-apcode="HAN" class="airport-item" href="javascript:void(0)"><b>Hà Nội </b><span>(HAN)</span> </a></li>
+                    <li><a data-apcode="HPH" class="airport-item" href="javascript:void(0)"><b>Hải Phòng </b><span>(HPH)</span> </a></li>
+                    <li><a data-apcode="DIN" class="airport-item" href="javascript:void(0)"><b>Điện Biên </b><span>(DIN)</span> </a></li>
+                
+
+                    <li>Miền Trung </li>
+                    <li><a data-apcode="THD" class="airport-item" href="javascript:void(0)"><b>Thanh Hóa </b><span>(THD)</span> </a></li>
+                    <li><a data-apcode="VII" class="airport-item" href="javascript:void(0)"><b>Vinh </b><span>(VII)</span> </a></li>
+                    <li><a data-apcode="HUI" class="airport-item" href="javascript:void(0)"><b>Huế </b><span>(HUI)</span> </a></li>
+                    <li><a data-apcode="VDH" class="airport-item" href="javascript:void(0)"><b>Đồng Hới </b><span>(VDH)</span> </a></li>
+                    <li><a data-apcode="DAD" class="airport-item" href="javascript:void(0)"><b>Đà Nẵng </b><span>(DAD)</span> </a></li>
+                    <li><a data-apcode="VCL" class="airport-item" href="javascript:void(0)"><b>Tam Kỳ </b><span>(VCL)</span> </a></li>
+                    <li><a data-apcode="PXU" class="airport-item" href="javascript:void(0)"><b>Pleiku </b><span>(PXU)</span> </a></li>
+                    <li><a data-apcode="TBB" class="airport-item" href="javascript:void(0)"><b>Tuy Hòa </b><span>(TBB)</span> </a></li>
+                </ul>
+            </div>
+            @*<ul>
+            
+            </ul>*@
+
+            <div class="col-md-4">
+                <ul>
+                    <li>Miền Nam </li>
+                    <li><a data-apcode="SGN" class="airport-item" href="javascript:void(0)"><b>Tp. Hồ chí Minh </b><span>(SGN)</span> </a></li>
+                    <li><a data-apcode="CXR" class="airport-item" href="javascript:void(0)"><b>Nha Trang </b><span>(CXR)</span> </a></li>
+                    <li><a data-apcode="DLI" class="airport-item" href="javascript:void(0)"><b>Đà Lạt </b><span>(DLI)</span> </a></li>
+                    <li><a data-apcode="PQC" class="airport-item" href="javascript:void(0)"><b>Phú Quốc </b><span>(PQC)</span> </a></li>
+                    <li><a data-apcode="UIH" class="airport-item" href="javascript:void(0)"><b>Qui Nhơn </b><span>(UIH)</span> </a></li>
+                    <li><a data-apcode="VCA" class="airport-item" href="javascript:void(0)"><b>Cần Thơ </b><span>(VCA)</span> </a></li>
+                    <li><a data-apcode="VCS" class="airport-item" href="javascript:void(0)"><b>Côn Đảo </b><span>(VCS)</span> </a></li>
+                    <li><a data-apcode="BMV" class="airport-item" href="javascript:void(0)"><b>Buôn Mê Thuột </b><span>(BMV)</span> </a></li>
+                    <li><a data-apcode="VKG" class="airport-item" href="javascript:void(0)"><b>Rạch Giá </b><span>(VKG)</span> </a></li>
+                    <li><a data-apcode="CAH" class="airport-item" href="javascript:void(0)"><b>Cà Mau </b><span>(CAH)</span> </a></li>
+                </ul>            
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <li>Quốc tế</li>
+                </ul>
+                <p>Gõ tên sân bay vào ô bên trên</p>
+            </div>
+        </div>
+    
+        <div id="stations-searching" class="row" style="display: none">
+            <div class="col-md-12">
+                <ul>
+                    <li>Miền Nam </li>
+                    <li><a data-apcode="SGN" class="airport-item" href="javascript:void(0)"><b>Tp. Hồ chí Minh </b><span>(SGN)</span> </a></li>
+                    <li><a data-apcode="CXR" class="airport-item" href="javascript:void(0)"><b>Nha Trang </b><span>(CXR)</span> </a></li>
+                    <li><a data-apcode="DLI" class="airport-item" href="javascript:void(0)"><b>Đà Lạt </b><span>(DLI)</span> </a></li>
+                    <li><a data-apcode="PQC" class="airport-item" href="javascript:void(0)"><b>Phú Quốc </b><span>(PQC)</span> </a></li>
+                    <li><a data-apcode="UIH" class="airport-item" href="javascript:void(0)"><b>Qui Nhơn </b><span>(UIH)</span> </a></li>
+                    <li><a data-apcode="VCA" class="airport-item" href="javascript:void(0)"><b>Cần Thơ </b><span>(VCA)</span> </a></li>
+                    <li><a data-apcode="VCS" class="airport-item" href="javascript:void(0)"><b>Côn Đảo </b><span>(VCS)</span> </a></li>
+                    <li><a data-apcode="BMV" class="airport-item" href="javascript:void(0)"><b>Buôn Mê Thuột </b><span>(BMV)</span> </a></li>
+                    <li><a data-apcode="VKG" class="airport-item" href="javascript:void(0)"><b>Rạch Giá </b><span>(VKG)</span> </a></li>
+                    <li><a data-apcode="CAH" class="airport-item" href="javascript:void(0)"><b>Cà Mau </b><span>(CAH)</span> </a></li>
+                </ul>            
+            </div>
+        </div>
+    </script>

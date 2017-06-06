@@ -1,0 +1,126 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+    Page.Title = "Vé máy bay giá rẻ";
+}
+
+@section head{
+    <script>
+        $(document).ready(function () {
+            //Phần này để chỉnh giá trị cho các control kiểu như chọn số người đi
+            $('.form-group-select-plus > .btn-group-select-num input').on('change', function () {
+                $(this).closest('.form-group-select-plus').find('>select').val($(this).val());
+            });
+            $('.form-group-select-plus > .btn-group-select-num label.active>input').change();
+
+            $('#flight-from, #flight-to').on('keypress', function () {
+                if ($(this).val().trim() != "") {
+                    $('#stations-static').hide();
+                    $('#stations-searching').show();
+                    $(this).repositionPopover();
+                }
+                else {
+                    $('#stations-static').show();
+                    $('#stations-searching').hide();
+                    $(this).repositionPopover();
+                }
+            });
+            $('#flight-from').popover({
+                container: '#depart-ap-wrapper',
+                title: 'Chọn sân bay khởi hành',
+                trigger: 'manual',
+                html: 'true',
+                content: $('#list-airport-template').html(),
+                placement: 'bottom'
+            });
+
+            $('#flight-to').popover({
+                container: '#return-ap-wrapper',
+                title: 'Chọn sân bay đến',
+                trigger: 'manual',
+                html: 'true',
+                content: $('#list-airport-template').html(),
+                placement: 'bottom',
+                modalId: 'hehe',
+                'class': 'cusotfdfsd'
+            });
+
+            $(document).on('mousedown', function (e) {
+                if ($(e.target).closest('.popover').length == 0) {
+                    if (e.target.id == 'flight-to')
+                        $('#flight-from').popover('hide');
+                    else if (e.target.id == 'flight-from')
+                        $('#flight-to').popover('hide');
+                    else {
+                        $('#flight-from').popover('hide');
+                        $('#flight-to').popover('hide');
+                    }
+                }
+            });
+
+            $('#flight-from').on('click', function () {
+                var me = this;
+                $(me).popover('show');
+                $('#depart-ap-wrapper .airport-item').on('click', function () {
+                    $('#flight-from').val($(this).text());
+                    $('#flight-from').data('apcode', $(this).data('apcode'));
+                    $(me).popover('hide');
+                });
+            });
+
+            $('#flight-to').on('click', function () {
+                var me = this;
+                $(me).popover('show');
+                $('#return-ap-wrapper .airport-item').on('click', function () {
+                    $('#flight-to').val($(this).text());
+                    $('#flight-to').data('apcode', $(this).data('apcode'));
+                    $(me).popover('hide');
+                });
+            });
+        });
+
+        $('#submit-flight-search-form').on('click', function () {
+            var json = {
+                FromAirport: $('#flight-from').val(),
+                ToAirport: $('#flight-to').val(),
+                FlightFrom: $('#flight-from').data('apcode'),
+                FlightTo: $('#flight-to').data('apcode'),
+                DepartDate: $('#depart-time').val(),
+                ReturnDate: $('#return-time').val(),
+                Adults: $('#adults').val(),
+                Children: $('#children').val(),
+                Infants: $('#infants').val()
+            };
+
+            $.ajax({
+                url: '@Url.Action("Init", "Home")',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(json),
+                success: function (json) {
+                    if (json.ErrorMessage) {
+                        alert(json.ErrorMessage);
+                    } else {
+                        window.location.href = '@Url.Action("TimKiem", "Home")?session=' + json.SessionId;
+                    }
+                },
+                error: function () {
+                    alert('hehe');
+                }
+            });
+            
+            return false;
+        });
+    </script>
+}
+
+@section mainContent{
+
+    <p style="margin-top: 10px;"></p>
+    <div class="container">
+	    <div class="row">
+            <div class="col-md-8">
+            @Html.Partial("~/Views/Shared/SearchForm.cshtml", null);    
+            </div>
+    </div>
+    </div>
+}

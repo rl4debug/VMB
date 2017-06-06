@@ -1,0 +1,90 @@
+﻿@using CMS
+<!DOCTYPE html>
+
+@{
+    var memberInfo = SessionManager.MemberInfo;
+}
+<html>
+    <head>
+    <title>Vé máy bay giá rẻ</title>
+
+    <link rel="icon" href="~/Images/icon/favicon.png">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="keywords" content="ve may bay, ve may bay gia re, dat ve may bay" />
+    <meta name="description" content="ve may bay, ve may bay gia re, tim chuyen bay">
+    <meta name="author" content="Tsoy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' rel='stylesheet' type='text/css'>
+    <!-- /GOOGLE FONTS -->
+    <link rel="stylesheet" href="~/Content/lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/styles.css">
+    <link rel="stylesheet" href="~/Content/css/mystyles.css">
+
+    <script src="~/Content/lib/underscore/underscore.js"></script>
+    <script src="~/Content/lib/jquery/jquery.js"></script>
+
+    <script src="~/Content/lib/icheck/iCheck.js"></script>
+</head>
+
+<body>
+    <div class="global-wrap">
+        <div class="introduce">
+            <div style="background: white">
+                <div class="container">
+                    <div>
+                        <img src="~/Content/images/logo-small1.png" alt="logo" />
+                    </div>
+                    <div>
+                        <h4>Thiên Ngọc Phước</h4>
+                        <span>Đại lý vé máy bay chính hãng giá rẻ</span>
+                    </div>
+                    <div class="top-header-lg">
+                        <div>
+                            @if (memberInfo == null)
+                            {
+                                <a href="@Url.Action("Login", "Home")" class="btn-toggle-login" title="Hiện thông tin đăng nhập/đăng ký">
+                                    Đăng nhập | Đăng ký
+                                </a>
+                            }
+                            else
+                            {
+                                @Html.Partial("~/Views/Layouts/LoggedInHeader.cshtml", memberInfo)
+                            }
+                        </div>
+                        <div class="hotline"><a href="tel:0838256256" rel="nofollow"><span>HOTLINE </span>(+84) 121-5949-739</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    @Html.Partial("~/Views/Shared/Header.cshtml")
+        @RenderSection("mainContent", true)
+        
+        
+        
+        @Html.Partial("~/Views/Shared/Footer.cshtml")
+    </div>
+    
+    <!-- Link to open the modal -->
+    <div id="dialogContainer">
+    </div>
+    <script src="~/Content/js/modernizr.js"></script>
+    <script src="~/Content/lib/bootstrap/bootstrap.js"></script>
+    <script src="~/Content/js/slimmenu.js"></script>
+    <script src="~/Content/js/ionrangeslider.js"></script>
+    <script src="~/Content/js/magnific.js"></script>
+    <script src="~/Content/js/bootstrap-datepicker.js"></script>
+    <script src="~/Content/js/dropit.js"></script>
+
+    <script src="~/Content/js/custom.js"></script>
+
+    @RenderSection("head", required: false)
+
+    @RenderSection("EndBody", required: false)
+</body>
+
+</html>
