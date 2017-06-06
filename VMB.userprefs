@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{935837E5-1B63-4090-AEFD-9B95E8B4DB5F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CMS/Models/DataModels/GetPnrCodeModel.cs">
+    <Files>
+      <File FileName="CMS/Controllers/HomeController.cs" Line="10" Column="63" />
+      <File FileName="CMS/SessionManager.cs" Line="23" Column="53" />
+      <File FileName="CMS/Views/Shared/_Layout.cshtml" Line="30" Column="59" />
+      <File FileName="CMS/Controllers/Booking.cs" Line="19" Column="1" />
+      <File FileName="CMS/Views/Shared/Error.cshtml" Line="1" Column="17" />
+      <File FileName="CMS/Models/DataModels/LoginParamModel.cs" Line="6" Column="26" />
+      <File FileName="CMS/Data/DAL/AccountDal.cs" Line="18" Column="49" />
+      <File FileName="CMS/Data/DAL/BaseDal.cs" Line="1" Column="1" />
+      <File FileName="CMS/Models/DataModels/LoginModel.cs" Line="6" Column="37" />
+      <File FileName="CMS/Models/DataModels/MemberInfo.cs" Line="1" Column="1" />
+      <File FileName="CMS/Views/Home/Index.cshtml" Line="103" Column="58" />
+      <File FileName="CMS/Content/css/EmptyHTMLFile.html" Line="1" Column="1" />
+      <File FileName="CMS/Data/DAL/BookingDal.cs" Line="16" Column="16" />
+      <File FileName="CMS/Models/DataModels/GetPnrCodeParamModel.cs" Line="9" Column="2" />
+      <File FileName="CMS/Models/DataModels/GetPnrCodeModel.cs" Line="6" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CMS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
